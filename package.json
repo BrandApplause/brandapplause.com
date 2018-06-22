@@ -1,0 +1,29 @@
+{
+  "name": "brandapplause.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandApplause/brandapplause.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandApplause/brandapplause.github.io/issues"
+  },
+  "homepage": "https://github.com/BrandApplause/brandapplause.github.io#readme",
+  "devDependencies": {
+    "fuse-box": "^3.3.0",
+    "sass": "^1.6.2",
+    "typescript": "^2.9.2",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.4.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
