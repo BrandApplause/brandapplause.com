@@ -1,2 +1,3 @@
-console.log("hello world!");
-import "./style.sass";
+console.log('hello world!');
+import 'sanitize.css/sanitize.css';
+import './style.sass';

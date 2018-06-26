@@ -20,11 +20,14 @@
   "devDependencies": {
     "fuse-box": "^3.3.0",
     "node-sass": "^4.9.0",
+    "pug": "^2.0.3",
     "typescript": "^2.9.2",
     "uglify-es": "^3.3.9",
     "uglify-js": "^3.4.1"
   },
   "dependencies": {
+    "autoprefixer": "^8.6.4",
+    "sanitize.css": "^6.0.0",
     "vue": "^2.5.16"
   }
 }
