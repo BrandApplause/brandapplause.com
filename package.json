@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fuse": "node fuse"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   "homepage": "https://github.com/BrandApplause/brandapplause.github.io#readme",
   "devDependencies": {
     "fuse-box": "^3.3.0",
-    "sass": "^1.6.2",
+    "node-sass": "^4.9.0",
     "typescript": "^2.9.2",
     "uglify-es": "^3.3.9",
     "uglify-js": "^3.4.1"
