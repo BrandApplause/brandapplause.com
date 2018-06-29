@@ -1,9 +1,14 @@
-<!DOCTYPE html>
-html
+<!doctype html>
+html(lang="en")
     head
-        | $css
-        | $bundles
+        meta(charset="utf-8")
         title Brand Applause
     body
-        h1 Hello World!
-        h2 Does pug work?
+        p just some text for testing
+        include ./index/navbar.pug
+        include ./index/splash.pug
+        include ./index/recommendations.pug
+        include ./index/services-clients.pug
+        include ./index/email.pug
+        include ./index/footer.pug
+        script(src='main.js')
