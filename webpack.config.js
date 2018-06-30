@@ -1,5 +1,7 @@
 /* jshint esversion: 6 */
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,7 +10,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
-    contentBase: '.dist'
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    publicPath: 'http://localhost:8080/',
+    index: 'index.html',
+    open: false
   },
   module: {
     rules: [
@@ -25,15 +31,22 @@ module.exports = {
           'pug-html-loader'
         ]
       },
-      // loader for large images, uses svg traces to load faster
+      // loader for large images, uses svg traces to load placeholders
       {
-        test: /\.(?:png|svg|jpg|gif)$/,
-        include: [path.resolve(__dirname, 'assets/large')],
+        test: /\.(?:png|jpe?g|gif)$/,
+        include: [path.resolve(__dirname, 'src/assets/large')],
         use: [
-          'file-loader',
-          // {
-          //   loader: 'image-trace-loader'
-          // },
+          {
+            loader: 'image-trace-loader',
+            options: {
+            }
+          },
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets/'
+            }
+          },
           {
             loader: 'image-webpack-loader'
           }
@@ -41,5 +54,9 @@ module.exports = {
       }
       // loader for small images
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
