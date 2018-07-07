@@ -39,6 +39,7 @@ module.exports = {
           {
             loader: 'image-trace-loader',
             options: {
+              turdSize: 20
             }
           },
           {
