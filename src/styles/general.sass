@@ -1,5 +1,15 @@
 body
-  height: 1000px
+  padding: 0 40px
+  background-color: $white
+  > div:not(.navbar):not(.footer)
+      max-width: $maxWidth
+      margin: 0 auto
+
+.wrapper
+  margin: 0 auto
+  position: relative
+  max-width: $maxWidth
+  height: 100%
 
 .no-style:link 
     text-decoration: inherit
@@ -8,3 +18,4 @@ body
 .no-style:visited 
     text-decoration: inherit
     color: inherit
+

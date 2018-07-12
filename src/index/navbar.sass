@@ -1,5 +1,3 @@
-$navHeight: 54px
-
 body
   margin-top: $navHeight
 
@@ -12,15 +10,12 @@ body
   padding: 0 40px
   color: $purple
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
-
-.wrapper
-  padding-top: 2px //being perectly centered didn't look quite right
-  margin: 0 auto
-  max-width: 900px
-  height: 100%
-  position: relative
-  *
-    display: inline-block
+  left: 0
+  z-index: 10
+  .wrapper
+    padding-top: 2px //being perectly centered didn't look quite right
+    *
+      display: inline-block
 
 .title
   line-height: $navHeight
@@ -37,7 +32,7 @@ body
   line-height: $navHeight
 
 
-.services,.contact
+.goto-services,.goto-contact
   text-transform: uppercase
   font:
     family: 'Lato'
@@ -51,18 +46,18 @@ body
   transition: color .2s ease-in, border-color .2s ease-in, box-shadow .2s ease-in
   &:hover
 
-.services
+.goto-services
   &:hover
     color: $highlight
 
-.contact
+.goto-contact
   border-radius: 20px
   border: $purple 2px solid
   overflow: hidden
   background-color: transparent
   &:hover
-    color: #efefef //less contrasty on a blue background
-    border-color: #efefef
+    color: $offWhite //less contrasty on a blue background
+    border-color: $offWhite
     box-shadow: 0 0 0 2px $highlight
     .shade
       transform: rotate(45deg) translateY(80px)
@@ -86,3 +81,4 @@ body
     padding: 0 20px
   .drawer
     opacity: 0
+    pointer-events: none
