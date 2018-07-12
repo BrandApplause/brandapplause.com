@@ -1,0 +1,96 @@
+.footer
+  background-color: $footerBackground
+  width: 100%
+  position: absolute
+  left: 0
+  bottom: 0
+  font-family: 'Lato'
+  color: $offWhite
+  padding: 40px
+  z-index: 0
+
+.pages,.services
+  margin: 0
+  padding: 0 
+  text-transform: uppercase
+  font-size: 19px
+  min-width: 190px
+  width: 33.33%
+  max-width: 300px
+  display: inline-block
+  vertical-align: top
+  line-height: 1.8em
+  li
+    text-transform: none
+    list-style: none
+    font:
+      size: 16px
+      weight: 300
+    letter-spacing: 0.08em
+    line-height: 1.4em
+    transition: color .2s ease
+    &:hover
+      color: $yellow
+
+.social-media
+  vertical-align: top
+  display: inline-block
+  min-width: 200px
+  position: absolute
+  right: 0
+  margin-right: 40px
+
+$iconSize: 50px
+.icon
+  display: inline-block
+  height: $iconSize
+  width: $iconSize
+  text-align: center
+  border-radius: 50px
+  vertical-align: top
+  font-size: 22px
+  margin: 0 15px
+  margin-top: -($iconSize - 26px) / 2 // don't know why it needs to ne 26 not 22px but it keeps its aligned with the other sections
+  i
+    line-height: $iconSize
+    margin: 0 auto
+  .edge-contain
+    display: none
+  .leaf,.edge-contain
+    transition-duration: 0.55s
+  &:hover
+    box-shadow: 0 0 0 2px $offWhite
+
+.linkedin 
+  .leaf
+    background-color: #0077B5
+
+.twitter 
+  .leaf
+    background-color: #1DA1F2
+
+.youtube
+  .leaf
+    background-color: #ff0000
+
+.copyright
+  margin-top: 30px
+
+@media (max-width: 700px)
+  .footer
+  .social-media
+    position: initial
+    display: block
+    margin: 20px auto
+    margin-left: -($iconSize - 20px) //not sure why this works either...
+  .copyright
+    margin: 0
+
+@media (max-width: 476px)
+  .pages,.services
+    margin-bottom: 20px
+  .social-media
+    text-align: center
+    margin: 20px auto
+  .copyright
+    text-align: center

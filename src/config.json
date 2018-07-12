@@ -1,0 +1,14 @@
+{
+  "services": [
+    {
+      "name": "I",
+      "image": "/assets/small/placeholder.png",
+      "video": "https://www.youtube.com/embed/rGCZudpfUEQ?rel=0"
+    },
+    {
+      "name": "Don't",
+      "image": "/assets/small/placeholder.png",
+      "video": "https://youtube.com"
+    }
+  ]
+}
