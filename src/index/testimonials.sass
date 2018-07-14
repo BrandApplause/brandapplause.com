@@ -1,0 +1,73 @@
+.testimonials
+  // border: 1px solid red
+  text-align: center
+  height: 1000px // for testing
+  padding: 10px
+  * 
+    // border: 1px solid red
+
+.t-container
+  vertical-align: top
+  display: inline-block
+  max-width: 500px
+  margin: 20px calc(25% - 251px)
+  box-shadow: $shadow
+  border-radius: 3px
+  border-bottom-right-radius: $imgSize / 2
+  background-color: $white
+
+@media (max-width: 1200px) //elements overlap without this
+  .t-container
+    display: block
+    margin: 30px auto
+
+.quote
+  padding: 15px
+  padding-bottom: 10px + (($imgSize - ($imgSize / (99/70))) / 2 + $imgBorder)
+  text-align: left
+  font-size: 17px
+  letter-spacing: 0.015em
+  line-height: 1.19em
+  i
+    color: $accentColor
+    font-size: 22px
+  span
+    font-weight: 700
+
+.author
+  background-color: $accentColor
+  text-align: right
+  border-bottom-right-radius: $imgSize / 2
+  color: $offWhite
+  *
+    display: inline-block
+  > *
+    vertical-align: middle
+  img
+    border: $imgBorder solid $offWhite
+    box-shadow: 0 0 0 3px $accentColor
+    border-radius: 50%
+    margin: -(($imgSize - ($imgSize / (99/70))) / 2 + $imgBorder)
+    margin-left: 10px
+
+@media (max-width: 600px)
+  .author
+    padding-right: ($imgSize + $imgBorder) / 2
+    // still breaks at <400px sizes with large names
+
+.not-img
+  width: calc(100% - #{($imgSize / (99/70) + (($imgSize - ($imgSize / (99/70))) / 2) + 10px + $imgBorder * 2)})
+  position: relative
+
+.name,.position,.company
+  width: 100%
+  opacity: 0.7
+
+.name
+  opacity: 0.9
+  font-weight: 700
+
+@media (max-width: $medium)
+  .testimonials
+    padding: 0
+
