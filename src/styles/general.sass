@@ -1,9 +1,14 @@
 body
-  padding: 0 40px
-  background-color: $white
-  > div:not(.navbar):not(.footer)
+  padding: 0 $defaultPagePadding
+  background-color: $offWhite
+  color: $dullBlack
+  font-family: 'Lato'
+  > *:not(.navbar):not(.footer)
       max-width: $maxWidth
       margin: 0 auto
+@media (max-width: $medium)
+  body
+    padding: 0 $mediumPagePadding
 
 .wrapper
   margin: 0 auto

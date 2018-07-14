@@ -1,11 +1,20 @@
-$black: #191308
+$black: #11151C //#242424
+$dullBlack: #404040
 $white: #FBFCFB
 $offWhite: #efefef
 $purple: #423666
 $highlight: #00C4F0
 $yellow: #F9E163
 
+$shadow: -1px 1px 6px rgba(0,0,0,0.12), 0px 1px 3px rgba(0,0,0,0.24)
+
+//media query sizes
+$medium: 700px
+$small: 500px
+
 $maxWidth: 1200px
+$defaultPagePadding: 40px
+$mediumPagePadding: 20px
 
 @import ./styles/general
 @import ./styles/aperture
@@ -13,6 +22,13 @@ $maxWidth: 1200px
 // navbar settings
 $navHeight: 54px
 @import ./index/navbar.sass
+
+//testimonial settings
+$imgSize: 100px
+$imgBorder: 3px
+$contentPadding: 10px
+$accentColor: #665fbe
+@import ./index/testimonials.sass
 
 // footer settings
 $footerBackground: #302e39
