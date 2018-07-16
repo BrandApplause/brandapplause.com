@@ -7,13 +7,12 @@ body
   position: fixed
   top: 0
   background-color: $white
-  padding: 0 $defaultPagePadding
   color: $purple
   box-shadow: $shadow
   left: 0
   z-index: 10
+  border-top: $topBorder solid $purple //being perectly centered didn't look quite right
   .wrapper
-    padding-top: 1px //being perectly centered didn't look quite right
     *
       display: inline-block
 
@@ -29,7 +28,7 @@ body
 
 .drawer
   float: right
-  line-height: $navHeight
+  line-height: $navHeight - $topBorder
 
 
 .goto-services,.goto-contact
@@ -38,7 +37,7 @@ body
     family: 'Lato'
     size: 18px
     weight: 600
-  letter-spacing: 0.04em 
+  letter-spacing: 0.04em
   padding: 4px 30px
   position: relative
   line-height: 1em
@@ -77,8 +76,7 @@ body
 @media (max-width: $medium) //kinda hacky way to do it, but the nav bar is not that important a feature
   .navbar
     position: absolute
-    top: 0 
-    padding: 0 $mediumPagePadding
+    top: 0
   .drawer
     opacity: 0
     pointer-events: none
