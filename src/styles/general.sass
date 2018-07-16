@@ -1,20 +1,22 @@
 body
-  padding: 0 $defaultPagePadding
   background-color: $offWhite
   color: $dullBlack
   font-family: 'Lato'
-  > *:not(.navbar):not(.footer)
-      max-width: $maxWidth
+  > *
       margin: 0 auto
-@media (max-width: $medium)
-  body
-    padding: 0 $mediumPagePadding
 
 .wrapper
+  padding: 0 $defaultPagePadding
   margin: 0 auto
   position: relative
   max-width: $maxWidth
   height: 100%
+@media (max-width: $medium)
+  .wrapper
+    padding: 0 $mediumPagePadding
+@media (max-width: $small)
+  .wrapper
+    padding: 0 $smallPagePadding
 
 .no-style:link 
     text-decoration: inherit
