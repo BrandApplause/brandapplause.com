@@ -49,7 +49,7 @@ $iconSize: 50px
   height: $iconSize
   width: $iconSize
   border-radius: $iconSize
-  transition: box-shadow 0.6s ease-in-out, background-color 0.3s 
+  transition: box-shadow 0.6s ease-in-out, background-color 0.3s, color .3s
   text-align: center
   border-radius: 50px
   vertical-align: top
@@ -65,8 +65,9 @@ $iconSize: 50px
   .leaf
     transition-duration: 0.55s
   &:hover
+    color: $white
     box-shadow: 0 0 0 2px rgba($white , 0.7)
-    transition: box-shadow 0.3s ease-in-out, background-color 0.4s ease-in
+    transition: box-shadow 0.3s ease-in-out, background-color 0.4s ease-in, color .3s
 
 .linkedin 
   .leaf

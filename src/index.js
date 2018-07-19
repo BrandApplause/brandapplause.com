@@ -5,3 +5,4 @@ import './index.pug';
 import './style.sass';
 
 // import './index/spash.js';
+import './index/contact.js';

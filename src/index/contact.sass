@@ -1,0 +1,179 @@
+@mixin diamond($skewAngle, $scale)
+  position: absolute
+  width: $envelopeHeight
+  height: $envelopeHeight
+  transform: rotate(-45deg) skew(#{$skewAngle}, #{$skewAngle}) scale(#{$scale})
+
+.contact
+  text-align: center
+
+.mail
+  display: inline-block
+  position: relative
+  width: 100%
+  max-width: 600px
+  *
+    // border: 1px solid red //for testing
+
+
+.flap
+  position: absolute
+  height: 0
+  width: 100%
+  bottom: 0
+  padding-bottom: 53.5%
+  margin-bottom: 46.5%
+  overflow: hidden
+  z-index: -1
+  transform-origin: bottom center
+  &:hover
+    transform: rotate(180deg)
+    z-index: 2
+  &::before //the top/back triangle
+    content: ''
+    +diamond(15deg, 1.2)
+    top: 56.5%
+    left: calc(50% - #{$envelopeHeight / 2})
+    background: $white
+    border-top-right-radius: 20px
+    box-shadow: $shadow
+  &::after //the lower/front triange
+    content: ''
+    +diamond(15deg, 1.2)
+    top: calc(56.5% + 15px)
+    left: calc(50% - #{$envelopeHeight / 2})
+    background-color: #d8e8e9
+    border-top-right-radius: 20px
+
+.backing
+  position: absolute
+  height: 0
+  padding-bottom: 46.5%
+  width: 100%
+  bottom: 0
+  z-index: -2
+  background: url('./assets/small/stripe.png')
+  border-radius: 3px
+  border-bottom-left-radius: $envelopeBorderRadius
+  border-bottom-right-radius: $envelopeBorderRadius
+  box-shadow: $shadow
+  &::after
+    content: ''
+    position: absolute
+    width: calc(100% - #{2 * $envelopeBorder})
+    height: calc(100% - #{$envelopeBorder})
+    left: $envelopeBorder
+    bottom: $envelopeBorder
+    background-color: #d8e8e9
+    z-index: 0
+
+.paper
+  display: inline-block
+  text-align: left
+  background-color: $white
+  box-shadow: $shadow
+  padding: 40px
+  margin: 20px
+  border-radius: 3px
+  width: calc(100% - 40px) !important
+  max-width: 500px
+  z-index: 0
+  transition: transform .4s ease-out
+  &:hover
+    transform: translateY(400px)
+  input
+    max-width: 500px
+    display: block
+    width: 100%
+    margin: 10px 0
+  textarea
+    margin-top: 40px
+    margin-bottom: 40%
+    display: block
+    width: 100%
+    height: 240px
+
+@media (max-width: $small)
+  .paper
+    padding: 10px
+    margin: 10px
+    width: calc(100% - 20px) !important
+
+.label
+  font:
+    size: 19px
+    weight: 700
+  letter-spacing: .04em
+  color: $purple
+
+.backing.two
+  padding-bottom: 19.65%
+  bottom: 0
+  z-index: 1
+  box-shadow: none
+  &::after
+    display: none
+
+.letter-front
+  z-index: 1
+  position: absolute
+  width: calc(100% - #{2 * $envelopeBorder})
+  left: $envelopeBorder
+  overflow: hidden
+  bottom: $envelopeBorder
+  height: 0
+  padding-bottom: calc(46.5% - #{$envelopeBorder})
+  border-bottom-left-radius: $envelopeBorderRadius
+  border-bottom-right-radius: $envelopeBorderRadius
+  .first-button
+    display: inline-block
+    position: absolute
+    bottom: 5%
+    left: calc(50% - 72px)
+    font:
+      size: 20px
+      weight: 700
+    color: $highlight
+    border-color: $highlight
+    text-transform: uppercase
+    line-height: 1em
+    letter-spacing: 0.04em
+    padding: 4px 30px
+    z-index: 5
+    &:hover
+      color: $offWhite
+      border-color: $offWhite
+    &::after
+      background-color: $highlight
+      z-index: -1
+    
+
+
+//a rotated -45 deg diamond(square) has all 90deg angles, 
+//for every x% you skew it:
+//  top+bottom angles increase by 2x%
+//  side angles decrease by 2x%
+//  height would normally be the √side * 2 but now is distorted 
+//  height decreases by wow fuck that, I don't remember trigonometry and sass/css never learned
+
+.right-fold,.left-fold,.middle-fold
+  background-color: $white
+  box-shadow: $shadow
+
+.right-fold,.left-fold
+  +diamond(19deg, 2.1)
+  top: $envelopeHeight / 2 - 13
+  border-top-right-radius: 10px
+
+.right-fold
+  right: - $envelopeHeight / 2 + 3
+
+.left-fold
+  left: - $envelopeHeight / 2 + 3
+
+.middle-fold
+  +diamond(17deg, 1.167)
+  top: 50%
+  left: calc(50% - #{$envelopeHeight / 2})
+  border-top-right-radius: 20px
+

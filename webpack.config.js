@@ -52,8 +52,23 @@ module.exports = {
             loader: 'image-webpack-loader'
           }
         ]
-      }
+      },
       // loader for small images
+      {
+        test: /\.(?:png|jpe?g|gif)$/,
+        include: [path.resolve(__dirname, 'src/assets/small')],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets/'
+            }
+          },
+          {
+            loader: 'image-webpack-loader'
+          }
+        ]
+      }
     ]
   },
   plugins: [
