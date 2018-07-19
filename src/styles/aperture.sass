@@ -25,12 +25,10 @@
 $leafs: 6
 @while $leafs > 0
   .aperture:hover 
-    .leaf-#{$leafs}
+    .leaf:nth-of-type(#{2 * $leafs}),.edge-contain:nth-of-type(#{2 * $leafs - 1})
       // for every 10% you ADD to translateY REMOVE 3% from translateX, at 25%,25% aperture is shut
       transform: rotate(60deg * $leafs + 60deg) translateY(50%) translateX(17.5%)
-    .edge-contain-#{$leafs}
-      transform: rotate(60deg * $leafs + 60deg) translateY(50%) translateX(18%)
-  .leaf-#{$leafs},.edge-contain-#{$leafs}
+  .leaf:nth-of-type(#{2 * $leafs}),.edge-contain:nth-of-type(#{2 * $leafs - 1})
     transform: rotate(60deg * $leafs) translateY(100%) translateX(3%)
   
   $leafs: $leafs - 1

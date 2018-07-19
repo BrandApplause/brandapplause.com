@@ -29,49 +29,46 @@ body
 .drawer
   float: right
   line-height: $navHeight - $topBorder
+  > *
+    text-transform: uppercase
+    font:
+      size: 18px
+      weight: 600
+    letter-spacing: 0.04em
+    padding: 4px 30px
+    position: relative
+    line-height: 1em
+    vertical-align: middle
 
-
-.goto-services,.goto-contact
-  text-transform: uppercase
-  font:
-    family: 'Lato'
-    size: 18px
-    weight: 600
-  letter-spacing: 0.04em
-  padding: 4px 30px
-  position: relative
-  line-height: 1em
-  vertical-align: middle
-  transition: color .2s ease-in, border-color .2s ease-in, box-shadow .2s ease-in
-  &:hover
-
-.goto-services
+.second-button
+  transition: color .2s ease-in
   &:hover
     color: $highlight
 
-.goto-contact
+.first-button
   border-radius: 20px
   border: $purple 2px solid
   overflow: hidden
   background-color: transparent
+  transition: color .2s ease-in, border-color .2s ease-in, box-shadow .2s ease-in
   &:hover
     color: $offWhite //less contrasty on a blue background
     border-color: $offWhite
     box-shadow: 0 0 0 2px $highlight
-    .shade
+    &::after
       transform: rotate(45deg) translateY(80px)
       background-color: $highlight
-
-.shade
-  z-index: -1
-  background-color: $purple
-  position: absolute
-  left: -10px
-  bottom: 0
-  height: 150px
-  width: 300px
-  transform: rotate(45deg) translateY(225px)
-  transition: transform .38s cubic-bezier(0.25, 0.46, 0.47, 1.6) , background-color .4s ease-in-out
+  &::after
+    content: ''
+    z-index: -1
+    background-color: $purple
+    position: absolute
+    left: -10px
+    bottom: 0
+    height: 150px
+    width: 300px
+    transform: rotate(45deg) translateY(225px)
+    transition: transform .38s cubic-bezier(0.25, 0.46, 0.47, 1.6) , background-color .4s ease-in-out
 
 @media (max-width: $medium) //kinda hacky way to do it, but the nav bar is not that important a feature
   .navbar
