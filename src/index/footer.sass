@@ -8,7 +8,7 @@
   padding: 40px 0
   z-index: 0
 
-.pages,.services
+.footer-list
   margin: 0
   padding: 0 
   text-transform: uppercase
@@ -22,6 +22,7 @@
   margin-bottom: 20px
   color: rgba($white , 0.8)
   li
+    margin-left: 8px
     width: fit-content
     text-transform: none
     list-style: none
@@ -30,7 +31,7 @@
       weight: 300
     color: rgba($white , 0.7)
     letter-spacing: 0.08em
-    line-height: 1.4em
+    line-height: 1.6em
     transition: color .2s ease
     &:hover
       color: $yellow
@@ -45,6 +46,8 @@
 
 $iconSize: 50px
 .icon
+  --closure: translateY(25%) translateX(25%)
+  --rotation: 120deg
   display: inline-block
   height: $iconSize
   width: $iconSize
@@ -58,12 +61,14 @@ $iconSize: 50px
   margin-top: -($iconSize - 26px) / 2 // don't know why it needs to ne 26 not 22px but it keeps its aligned with the other sections
   z-index: 0
   i
+    z-index: 3
+    position: relative
     line-height: $iconSize
     margin: 0 auto
   .edge-contain
     display: none
   .leaf
-    transition-duration: 0.55s
+    transition-duration: 0.7s
   &:hover
     color: $white
     box-shadow: 0 0 0 2px rgba($white , 0.7)

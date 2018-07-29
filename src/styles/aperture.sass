@@ -6,28 +6,32 @@
   position: absolute
   width: 200%
   height: 100%
-  z-index: -2
+  z-index: 1
   top: 25%
   left: 0%
   transition: transform 0.75s
   transform-origin: 25% 25%
+  pointer-events: none
 
 .edge-contain
-  z-index: -1
+  z-index: 2
 
 
 .edge
   position: absolute
   width: 42%
   height: 2px
-  z-index: 1
 
 $leafs: 6
 @while $leafs > 0
   .aperture:hover 
     .leaf:nth-of-type(#{2 * $leafs}),.edge-contain:nth-of-type(#{2 * $leafs - 1})
-      // for every 10% you ADD to translateY REMOVE 3% from translateX, at 25%,25% aperture is shut
+      // for every 10% you ADD to translateY REMOVE 3% from translateX, at 25%,25% aperture is shut, at 75% 10% aperture is fully open
+      //for ie 11- or any browser that doesn't support custom properties
       transform: rotate(60deg * $leafs + 60deg) translateY(50%) translateX(17.5%)
+
+      transform: rotate(calc(#{60deg * $leafs} + var(--rotation))) var(--closure)
+
   .leaf:nth-of-type(#{2 * $leafs}),.edge-contain:nth-of-type(#{2 * $leafs - 1})
     transform: rotate(60deg * $leafs) translateY(100%) translateX(3%)
   
