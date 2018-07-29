@@ -1,0 +1,78 @@
+.client-services
+  background-color: $white
+  width: calc(100% - 40px)
+  box-shadow: $shadow
+  margin: 0 20px
+  padding: 15px 0
+  h1
+    margin: 0
+    text-align: center
+    color: $purple
+@media (max-width: 976px)
+  .client-services
+    width: calc(100% - 20px)
+    margin: 0 10px
+
+.services
+  text-align: center
+  margin: 15px 0 20px
+
+.service
+  margin: 0 15px
+  display: inline-block
+  --closure: translateY(68%) translateX(12.9%)
+  --rotation: 15deg
+  height: 90px
+  width: 90px
+  border-radius: 50%
+  background-color: #eee  
+  // box-shadow: inset 0 0 0 2px $dullBlack, 0 0 1px 1px $dullBlack
+  box-shadow:  0 0 1px 1px $dullBlack
+  border: 3px solid $dullBlack
+  text-align: center
+  padding: 0 5px
+  font:
+    weight: 700
+  letter-spacing: -0.02em
+  transition: color 0.4s 0.3s, background-color 0s 0.3s, border 0.2s 0s, box-shadow 0.4s 0s
+  &:active
+    animation: shutter 0.6s ease forwards
+    background-color: $dullBlack
+    border: 3px solid #eee
+    box-shadow:  0 0 0px 3px $dullBlack
+    color: rgba($offWhite, 0.65)
+    transition: color 0.4s 0.3s, background-color 0s 0.3s, border 0.3s 0s, box-shadow 0.2s 0s
+    i
+      color: rgba($offWhite, 0.8)
+      transition-delay: 0.3s
+  &:hover
+    .edge-contain,.leaf
+      transition-delay: -0.1s
+  i
+    display: block
+    margin-top: 14px
+    font-size: 24px
+  .edge-contain,.leaf
+    transition-duration: 0.4s
+    transition-timing-function: cubic-bezier(0.46,-0.46, 0.63, 1.14)
+  .leaf
+    background-color: $dullBlack
+  .edge
+    height: 3px
+    top: -1px
+    background-color: rgba($offWhite, 0.4)
+    border-bottom-left-radius: 3px
+    transition: opacity .15s ease-out
+
+@keyframes shutter
+  40%
+    --closure: translateY(26%) translateX(24.7%)
+    --rotation: 60deg
+  100%
+    --closure: translateY(85%) translateX(7%)
+    --rotation: 8deg
+
+.videos
+  iframe
+    width: 100%
+    height: 540px

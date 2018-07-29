@@ -7,14 +7,13 @@
 .contact
   text-align: center
 
+.address
+
 .mail
   display: inline-block
   position: relative
   width: 100%
   max-width: 600px
-  *
-    // border: 1px solid red //for testing
-
 
 .flap
   position: absolute
@@ -53,6 +52,7 @@
   bottom: 0
   z-index: -2
   background: url('./assets/small/stripe.png')
+  background-position: bottom left -15px
   border-radius: 3px
   border-bottom-left-radius: $envelopeBorderRadius
   border-bottom-right-radius: $envelopeBorderRadius
@@ -78,9 +78,9 @@
   width: calc(100% - 40px) !important
   max-width: 500px
   z-index: 0
-  transition: transform .4s ease-out
+  transition: transform .15s ease-out
   &:hover
-    transform: translateY(400px)
+    transform: translateY(-20px)
   input
     max-width: 500px
     display: block
@@ -107,7 +107,7 @@
   color: $purple
 
 .backing.two
-  padding-bottom: 19.65%
+  padding-bottom: 19.84%
   bottom: 0
   z-index: 1
   box-shadow: none
@@ -125,6 +125,7 @@
   padding-bottom: calc(46.5% - #{$envelopeBorder})
   border-bottom-left-radius: $envelopeBorderRadius
   border-bottom-right-radius: $envelopeBorderRadius
+  pointer-events: none
   .first-button
     display: inline-block
     position: absolute
@@ -133,18 +134,20 @@
     font:
       size: 20px
       weight: 700
-    color: $highlight
-    border-color: $highlight
+    color: $postalBlue
+    border-color: $postalBlue
     text-transform: uppercase
-    line-height: 1em
     letter-spacing: 0.04em
-    padding: 4px 30px
+    padding: 5px 30px 3px
     z-index: 5
+    pointer-events: all
     &:hover
       color: $offWhite
       border-color: $offWhite
+      &::after
+        background-color: $highlight
     &::after
-      background-color: $highlight
+      background-color: $postalBlue
       z-index: -1
     
 
