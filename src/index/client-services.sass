@@ -1,34 +1,34 @@
 .client-services
   background-color: $white
-  width: calc(100% - 40px)
-  box-shadow: $shadow
-  margin: 0 20px
-  padding: 15px 0
-  h1
-    margin: 0
-    text-align: center
-    color: $purple
-@media (max-width: 976px)
-  .client-services
-    width: calc(100% - 20px)
-    margin: 0 10px
-
+  
 .services
   text-align: center
-  margin: 15px 0 20px
-
+  margin: 40px auto
+  max-width: 1200px
+  position: relative
+  &::before
+    content: ''
+    background-color: $accentColor
+    width: 60%
+    height: 10px
+    border-radius: 7px
+    position: absolute
+    top: 40px
+    left: 20%
+    box-shadow: $shadow
+    
 .service
-  margin: 0 15px
+  margin: 0 20px
   display: inline-block
   --closure: translateY(68%) translateX(12.9%)
   --rotation: 15deg
   height: 90px
   width: 90px
   border-radius: 50%
-  background-color: #eee  
+  background-color: $offWhite
   // box-shadow: inset 0 0 0 2px $dullBlack, 0 0 1px 1px $dullBlack
-  box-shadow:  0 0 1px 1px $dullBlack
-  border: 3px solid $dullBlack
+  box-shadow: 0 0 0 2px $offWhite,  0 0 0px 5px $accentColor
+  border: 3px solid $accentColor
   text-align: center
   padding: 0 5px
   font:
@@ -38,7 +38,7 @@
   &:active
     animation: shutter 0.6s ease forwards
     background-color: $dullBlack
-    border: 3px solid #eee
+    border: 3px solid $offWhite
     box-shadow:  0 0 0px 3px $dullBlack
     color: rgba($offWhite, 0.65)
     transition: color 0.4s 0.3s, background-color 0s 0.3s, border 0.3s 0s, box-shadow 0.2s 0s
@@ -73,6 +73,31 @@
     --rotation: 8deg
 
 .videos
+  .video-wrapper
+    height: 0 
+    padding-bottom: 56.25%
+    position: relative
+    width: calc(100% - 40px)
+    margin: 0 auto
+  .wrapper
+    margin: 30px 20px
+    line-height: 1.25em
+    font-size: 19px
+    span
+      font-weight: 700
   iframe
+    height: 100%
     width: 100%
-    height: 540px
+    position: absolute
+    top: 0 
+    left: 0
+
+.brands
+  background: $dullBlack
+  height: 280px
+  box-shadow: inset $shadow
+  
+@media (max-width: 1200px)
+  .videos
+    padding: 0
+    width: 100%
