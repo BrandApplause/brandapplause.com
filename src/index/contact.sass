@@ -6,8 +6,68 @@
 
 .contact
   text-align: center
+  padding: 10px 60px 30px
+@media (max-width: 750px)
+  .contact
+    padding: 10px 15px 30px
 
 .address
+  width: 400px
+  margin: 20px 0px 0 calc(100% - 1000px)
+  float: right
+  border-radius: $radius
+  box-shadow: $shadow
+@media (max-width: 1180px)
+  .address
+    margin: 20px auto
+    width: calc(100% - 660px)
+@media (max-width: 1120px)
+  .address
+    float: none
+    width: 500px
+@media (max-width: 550px)
+  .address
+    width: 100%
+  
+.head
+  background-color: $accentColor
+  border-top-left-radius: $radius
+  border-top-right-radius: $radius
+  text-align: left
+  padding: 20px
+  font:
+    size: 20px
+    weight: 700
+  color: rgba( $white, 0.8)
+  line-height: 1.5em
+  span
+    display: block
+    color:  rgba( $white, 0.6)
+    width: calc(100% - 100px)
+    font-weight: 500
+    transition: color 0.2s 
+    &:hover
+      color: rgba( 255, 248, 116, 0.97)
+  i
+    padding-right: 8px
+  img
+    float: right
+    border-radius: $radius
+    margin: -5px
+@media (max-width: 360px)
+  .head
+    font-size: 17px
+
+.bio
+  border-bottom-left-radius: $radius
+  border-bottom-right-radius: $radius
+  background-color: $white
+  color: $dullBlack
+  padding: 15px 20px
+  text-align: left
+  line-height: 1.2em
+  span
+    font-weight: 700
 
 .mail
   display: inline-block
@@ -74,7 +134,7 @@
   box-shadow: $shadow
   padding: 40px
   margin: 20px
-  border-radius: 3px
+  border-radius: $radius
   width: calc(100% - 40px) !important
   max-width: 500px
   z-index: 0
@@ -95,7 +155,7 @@
 
 @media (max-width: $small)
   .paper
-    padding: 10px
+    padding: 20px
     margin: 10px
     width: calc(100% - 20px) !important
 
