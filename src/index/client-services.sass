@@ -13,30 +13,35 @@
     height: 10px
     border-radius: 7px
     position: absolute
-    top: 40px
+    top: 46px
     left: 20%
     box-shadow: $shadow
     
 .service
-  margin: 0 20px
+  margin: 0 30px
   display: inline-block
-  --closure: translateY(68%) translateX(12.9%)
-  --rotation: 15deg
-  height: 90px
-  width: 90px
+  --closure: translateY(66%) translateX(13.2%)
+  --rotation: 10deg
+  height: 100px
+  width: 100px
   border-radius: 50%
-  background-color: $offWhite
-  // box-shadow: inset 0 0 0 2px $dullBlack, 0 0 1px 1px $dullBlack
+  background-color: $white
   box-shadow: 0 0 0 2px $offWhite,  0 0 0px 5px $accentColor
   border: 3px solid $accentColor
   text-align: center
   padding: 0 5px
   font:
+    size: 17px
     weight: 700
   letter-spacing: -0.02em
   transition: color 0.4s 0.3s, background-color 0s 0.3s, border 0.2s 0s, box-shadow 0.4s 0s
+  &:hover
+    border-color: $offWhite
+    box-shadow: 0 0 0px 3px $accentColor
+    .edge-contain,.leaf
+      transition-delay: -0.1s
   &:active
-    animation: shutter 0.6s ease forwards
+    animation: shutter 0.7s ease forwards
     background-color: $dullBlack
     border: 3px solid $offWhite
     box-shadow:  0 0 0px 3px $dullBlack
@@ -45,15 +50,12 @@
     i
       color: rgba($offWhite, 0.8)
       transition-delay: 0.3s
-  &:hover
-    .edge-contain,.leaf
-      transition-delay: -0.1s
   i
     display: block
-    margin-top: 14px
-    font-size: 24px
+    margin-top: 15px
+    font-size: 28px
   .edge-contain,.leaf
-    transition-duration: 0.4s
+    transition-duration: 0.3s
     transition-timing-function: cubic-bezier(0.46,-0.46, 0.63, 1.14)
   .leaf
     background-color: $dullBlack
@@ -64,33 +66,38 @@
     border-bottom-left-radius: 3px
     transition: opacity .15s ease-out
 
+@media (max-width: 500px)
+  .service
+    margin: 0 15px
+
 @keyframes shutter
-  40%
-    --closure: translateY(26%) translateX(24.7%)
+  20%
+    --closure: translateY(28%) translateX(24%)
     --rotation: 60deg
   100%
     --closure: translateY(85%) translateX(7%)
     --rotation: 8deg
 
 .videos
-  .video-wrapper
-    height: 0 
-    padding-bottom: 56.25%
-    position: relative
-    width: calc(100% - 40px)
-    margin: 0 auto
-  .wrapper
-    margin: 30px 20px
-    line-height: 1.25em
-    font-size: 19px
-    span
-      font-weight: 700
   iframe
     height: 100%
     width: 100%
     position: absolute
     top: 0 
     left: 0
+  .wrapper
+    margin: 20px auto
+    line-height: 1.25em
+    max-width: 900px
+    
+    span
+      font-weight: 700
+.video-wrapper
+  height: 0 
+  padding-bottom: 56.25%
+  position: relative
+  width: calc(100% - 40px)
+  margin: 0 auto
 
 .brands
   background: $dullBlack
@@ -100,4 +107,8 @@
 @media (max-width: 1200px)
   .videos
     padding: 0
+    width: 100%
+
+@media (max-width: $medium)
+  .video-wrapper
     width: 100%

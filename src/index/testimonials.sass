@@ -10,7 +10,7 @@
   max-width: 520px
   margin: 20px 20px 40px
   box-shadow: $shadow
-  border-radius: 3px
+  border-radius: $radius
   border-bottom-right-radius: $imgSize / 2
   background-color: $white
   &:first-child
@@ -30,7 +30,7 @@
   padding-bottom: 10px + (($imgSize - ($imgSize / (99/70))) / 2 + $imgBorder)
   text-align: left
   letter-spacing: 0.015em
-  line-height: 1.19em
+  line-height: 1.16em
   i
     color: $accentColor
     font-size: 22px
@@ -39,6 +39,7 @@
 
 .author
   background-color: $accentColor
+  border-bottom-left-radius: $radius - 1
   border-bottom-right-radius: $imgSize / 2
   color: $offWhite
   padding-right: ($imgSize + $imgBorder) / 2

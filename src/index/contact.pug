@@ -2,13 +2,21 @@
   .wrapper Contact Me
 .contact.wrapper
   .address
-    img(src='http://via.placeholder.com/100x100')
-    | John Doe
-    //- fake number 
-    i(class="fas fa-phone")
-    a(href='tel:202-555-0131') 202.555.0131 
-    i(class="fas fa-envelope")
-    a(href='mailto:matthewzwartswhite@gmail.com') test email (mine)
+    .head
+      img(src='http://via.placeholder.com/100x100')
+      i(class="fas fa-user-alt")
+      | John Doe
+      //- fake number
+      span
+        i(class="fas fa-phone")
+        a(href='tel:202-555-0131').no-style 202.555.0131
+      span
+        i(class="fas fa-envelope")
+        a(href='mailto:matthewzwartswhite@gmail.com').no-style test email (mine)
+    .bio
+      .
+        #[span John Doe is a ]
+        Nobody's fault it could have been managed better action item, nor high touch client. Upstream selling first-order optimal strategies wiggle room bells and whistles pull in ten extra bodies to help roll the tortoise, but deploy, nor let's not solutionize this right now parking lot it.
   form(action="").mail
     .flap
     .backing
