@@ -1,0 +1,94 @@
+.splash
+  height: calc(100vh - #{$navHeight})
+  max-width: 100vw
+  position: relative
+  box-shadow: inset -1px 1px 8px rgba(0,0,0,0.12), inset 0px 1px 5px rgba(0,0,0,0.24)
+  overflow: hidden
+  &::after
+    content: ''
+    position: absolute
+    top: 0 
+    z-index: -1
+    background: url('./assets/large/splash.jpg')
+    background-size: cover
+    background-attachment: fixed
+    background-position: center
+    filter: brightness( 60% )
+    height: 100%
+    width: 100%
+
+.catch-vcenter
+  display: flex
+  align-items: center
+  height: 80%
+
+.catch
+  color: $white
+  opacity: 0
+  text-align: center
+  text-shadow: black 0 0 35px
+  animation: slideIn .1s ease-in .5s 1 normal forwards 
+  font:
+    size: 44px
+    family: 'Comfortaa'
+  a, a:visited
+    color: $yellow
+    transition: color .3s
+    &:hover
+      color: #f8eaa0
+
+.scroll-down
+  position: absolute
+  bottom: 0
+  height: ($scrollHeight * $beatRatio) * 2 + $scrollHeight
+  width: 100%
+  opacity: 0.6
+  animation: bounce 0.8s cubic-bezier(0.2, 0.58, 0.39, 0.98) 2s infinite alternate
+  .part
+    position: absolute
+    left: 50%
+    width: 50%
+    height: 100%
+    top: 0
+    overflow-x: hidden
+    transform: rotate(-30deg) translateX(#{-$scrollHeight * .3})
+    transform-origin: left #{($scrollHeight * $beatRatio) + $scrollHeight / 2}
+    &:nth-child(odd) // split divs into left and right
+      left: 0
+      transform-origin: right #{($scrollHeight * $beatRatio) + $scrollHeight / 2}
+      transform: rotate(30deg) scaleX(-1) translateX(100%) translateX(-3px)
+    &::after //actual visable part
+      background-color: $offWhite
+      content: ''
+      position: absolute
+      width: 38px 
+      height: $scrollHeight
+      top: ($scrollHeight * $beatRatio)
+      border-radius: 5px
+      transform: translateX(-5px)
+  &:nth-child(2)
+    opacity: 0 
+    animation: bounceSplash 1.6s cubic-bezier(0.2, 0.58, 0.39, 0.98) 2s infinite running
+
+@keyframes slideIn
+  0%
+    transform: translateY(10%) 
+    opacity: 0
+  100%
+    transform: translateY(0%)
+    opacity: 0.9
+  
+@keyframes bounce 
+  0%
+    transform: translateY(0%)
+  100%
+    transform: translateY(-10%)
+
+@keyframes bounceSplash
+  0%
+    transform: translateY(0%) scale(1)
+    opacity: 0.2
+  90%
+    opacity: 0
+  100%
+    transform: translateY(-12%) scale(1.6)

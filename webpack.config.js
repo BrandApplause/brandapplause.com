@@ -36,12 +36,12 @@ module.exports = {
         test: /\.(?:png|jpe?g|gif)$/,
         include: [path.resolve(__dirname, 'src/assets/large')],
         use: [
-          {
-            loader: 'image-trace-loader',
-            options: {
-              turdSize: 20
-            }
-          },
+          // {
+          //   loader: 'image-trace-loader',
+          //   options: {
+          //     turdSize: 20
+          //   }
+          // },
           {
             loader: 'file-loader',
             options: {
