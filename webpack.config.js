@@ -27,7 +27,7 @@ module.exports = {
         use: [
           'file-loader?name=index.html',
           'extract-loader',
-          'html-loader',
+          'html-loader?interpolate=true',
           'pug-html-loader'
         ]
       },
@@ -68,6 +68,11 @@ module.exports = {
             loader: 'image-webpack-loader'
           }
         ]
+      },
+      // loader for svgs
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
     ]
   },
