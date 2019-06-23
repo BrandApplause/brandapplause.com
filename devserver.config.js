@@ -1,12 +1,21 @@
 /* jshint esversion: 6 */
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    publicPath: 'http://localhost:8080/',
+    index: 'index.html',
+    open: false
   },
   module: {
     rules: [
@@ -61,5 +70,9 @@ module.exports = {
         loader: 'svg-inline-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };

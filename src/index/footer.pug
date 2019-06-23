@@ -1,10 +1,10 @@
 .footer
   .wrapper
     ul.footer-list Jump To
-      li Home
-      li Testimonials
-      li Services
-      li Contact
+      li #[a(href='#').no-style Home]
+      li #[a(href="#testimonials").no-style Testimonials]
+      li #[a(href="#services").no-style Services]
+      li #[a(href="#contact").no-style Contact]
     ul.footer-list Services
       li #[a(href='#').no-style will]
       li template 
@@ -20,4 +20,4 @@
       a(href="#").icon.aperture.no-style.youtube
         include ../pugparts/aperture.pug
         <i class="fab fa-youtube"></i>
-    .copyright Copyright 2018 or something 
+    .copyright Copyright 2017-#{(new Date()).getFullYear()}
