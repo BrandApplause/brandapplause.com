@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -36,12 +36,6 @@ module.exports = {
         test: /\.(?:png|jpe?g|gif)$/,
         include: [path.resolve(__dirname, 'src/assets/large')],
         use: [
-          // {
-          //   loader: 'image-trace-loader',
-          //   options: {
-          //     turdSize: 20
-          //   }
-          // },
           {
             loader: 'file-loader',
             options: {
@@ -77,7 +71,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
 };

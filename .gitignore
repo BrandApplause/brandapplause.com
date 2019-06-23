@@ -48,3 +48,4 @@ Temporary Items
 node_modules
 dist
 .fusebox
+package-lock.json
