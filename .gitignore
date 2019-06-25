@@ -45,7 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Specific to npm
 node_modules
 dist
 .fusebox
 package-lock.json
+npm-debug.log
