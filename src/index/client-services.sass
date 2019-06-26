@@ -101,18 +101,21 @@
 
 .brands
   background: $dullBlack
-  height: 280px
   box-shadow: inset $shadow
   div
     display: table
     margin: auto
     position: relative
+    text-align: center
+    max-width: $maxWidth
+    @media (max-width: $medium)
+      padding: 0 $mediumPagePadding
+    @media (max-width: $small)
+      padding: 0 $smallPagePadding
     svg
       height: 5em
       width: 5em
-      margin:
-        left: 1em
-        right: 1em
+      margin: 1em
       fill: inherit
   
 @media (max-width: 1200px)
