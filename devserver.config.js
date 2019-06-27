@@ -14,6 +14,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
     publicPath: 'http://localhost:8080/',
+	host: '0.0.0.0',
     index: 'index.html',
     open: false
   },
