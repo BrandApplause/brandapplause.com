@@ -2,7 +2,6 @@
 console.log('hello world!');
 import 'sanitize.css';
 import './index.pug';
-import './style.sass';
 
 // import './index/spash.js';
 import './index/contact.js';
