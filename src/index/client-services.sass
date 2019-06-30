@@ -52,8 +52,10 @@
       transition-delay: 0.3s
   i
     display: block
-    margin-top: 15px
-    font-size: 28px
+    margin:
+      top: 19px
+      bottom: 4px
+    font-size: 30px
   .edge-contain,.leaf
     transition-duration: 0.3s
     transition-timing-function: cubic-bezier(0.46,-0.46, 0.63, 1.14)
@@ -78,26 +80,26 @@
     --closure: translateY(85%) translateX(7%)
     --rotation: 8deg
 
-.videos
-  iframe
-    height: 100%
-    width: 100%
-    position: absolute
-    top: 0 
-    left: 0
+.tabcontent
+  display: none
   .wrapper
     margin: 20px auto
     line-height: 1.25em
     max-width: 900px
-    
     span
       font-weight: 400
-.video-wrapper
-  height: 0 
-  padding-bottom: 56.25%
-  position: relative
-  width: calc(100% - 40px)
-  margin: 0 auto
+  .media-wrapper
+    height: 0 
+    padding-bottom: 45%
+    position: relative
+    width: calc(80% - 40px)
+    margin: 10px auto
+    iframe,img
+      height: 100%
+      width: 100%
+      position: absolute
+      top: 0 
+      left: 0
 
 .brands
   background: $dullBlack

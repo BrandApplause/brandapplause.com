@@ -4,9 +4,9 @@
       .catch
         .
           Over #{(new Date()).getFullYear()-2007} years of experience making
-          #[a(href='#services').no-style web videos],
-          #[a(href='#services').no-style commercials],
-          and #[a(href='#services').no-style product shots]. 
+          #[a(href='#services' onclick="openService(event, 'tab-web')").no-style web videos],
+          #[a(href='#services' onclick="openService(event, 'tab-tv')").no-style broadcast television],
+          and #[a(href='#services' onclick="openService(event, 'tab-products')").no-style product shots]. 
   .scroll-down
     .part
     .part
