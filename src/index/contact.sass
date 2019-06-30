@@ -37,26 +37,57 @@
   padding: 20px
   font:
     size: 20px
-    weight: 400
-  color: rgba( $white, 0.8)
+    weight: 500
   line-height: 1.5em
   span
     display: block
-    color:  rgba( $white, 0.6)
+    color: rgba( $white, 0.7)
     width: calc(100% - 100px)
-    font-weight: 500
-    transition: color 0.2s 
+    transition: color 0.2s
     &:hover
       color: rgba( 255, 248, 116, 0.97)
+    &:first-of-type
+      margin-top: 2px
+      color: rgba( $white, 0.9)
   i
     padding-right: 8px
   img
+    border: 3px solid #f1f1fa;
+    box-shadow: 0 0 0 3px #665fbe;
     float: right
     border-radius: $radius
-    margin: -5px
-@media (max-width: 360px)
+    margin: -8px
+    margin-top: -8px
+@media (min-width: 1121px) and (max-width: 1181px)
   .head
-    font-size: 17px
+    font-size: 19px
+    img
+      margin-top: -56px
+      margin-right: 0px
+    span
+      width: 100%
+      margin-top: 0
+      &:first-of-type
+        margin-top: 0
+@media (max-width: 474px)
+  .head
+    font-size: 19px
+    img
+      margin-top: -55px
+      margin-right: 0px
+    span
+      width: 100%
+      margin-top: 0
+      &:first-of-type
+        margin-top: 0
+@media (max-width: 354px)
+  .head span:last-of-type
+    font-size: 16.47px
+@media (max-width: 350px)
+  .head img
+    margin-right: -31px
+    margin-top: -54px
+
 
 .bio
   border-bottom-left-radius: $radius
