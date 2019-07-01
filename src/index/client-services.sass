@@ -40,7 +40,7 @@
     box-shadow: 0 0 0px 3px $purple
     .edge-contain,.leaf
       transition-delay: -0.1s
-  &:active
+  &.active
     animation: shutter 0.7s ease forwards
     background-color: $dullBlack
     border: 3px solid $offWhite
@@ -82,24 +82,43 @@
 
 .tabcontent
   display: none
+  width: 100%
+  text-align: center
   .wrapper
-    margin: 20px auto
     line-height: 1.25em
-    max-width: 900px
+    width: 425px
+    text-align: left
+    margin: 20px 0px 0 calc(100% - 1025px)
+    float: right
     span
       font-weight: 400
+  @media (max-width: 1180px)
+    .wrapper
+      margin: 20px auto
+      width: calc(100% - 660px)
+  @media (max-width: 1120px)
+    .wrapper
+      float: none
+      width: 500px
+  @media (max-width: 550px)
+    .wrapper
+      width: 100%
   .media-wrapper
+    display: inline-block
     height: 0 
-    padding-bottom: 45%
+    padding-bottom: 56.25%
     position: relative
-    width: calc(80% - 40px)
+    width: calc(100% - 40px)
+    max-width: 600px
     margin: 10px auto
     iframe,img
-      height: 100%
       width: 100%
       position: absolute
       top: 0 
       left: 0
+    iframe
+      height: 100%
+      max-height: 337.5px
 
 .brands
   background: $dullBlack
