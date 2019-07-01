@@ -6,9 +6,9 @@
       li #[a(href="#services").no-style Services]
       li #[a(href="#contact").no-style Contact]
     ul.footer-list Services
-      li #[a(href='#').no-style will]
-      li template 
-      li later
+      li #[a(href='#services' onclick="openService(event, 'tab-web')").no-style Web Videos]
+      li #[a(href='#services' onclick="openService(event, 'tab-tv')").no-style Broadcast Television] 
+      li #[a(href='#services' onclick="openService(event, 'tab-products')").no-style Product Shots]
     .social-media
       //- not sure what social media buttons there will be so these are temporary
       a(href="#").icon.aperture.no-style.linkedin
@@ -20,4 +20,4 @@
       a(href="#").icon.aperture.no-style.youtube
         include ../pugparts/aperture.pug
         <i class="fab fa-youtube"></i>
-    .copyright Copyright 2007-#{(new Date()).getFullYear()}
+    .copyright Copyright © BrandApplause 2007-#{(new Date()).getFullYear()} #[a(href="https://white-matter.github.io/").no-style Designed by Matthew White]

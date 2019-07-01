@@ -95,6 +95,13 @@ $iconSize: 50px
 .copyright
   margin-top: 30px
   color: rgba($white , 0.5)
+  a
+    float: right
+    @media (max-width: $medium)
+      display: block
+      float: unset
+    &:hover
+      color: $yellow
 
 @media (max-width: $medium)
   .footer
