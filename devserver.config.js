@@ -11,7 +11,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'src'),
+    watchContentBase: true,
     hot: true,
     publicPath: 'http://localhost:8080/',
 	host: '0.0.0.0',
