@@ -2,38 +2,49 @@
   .section-head 
     .wrapper Services & Clients
   .services
-    .service.aperture(onclick="openService(event, 'tab-web')")
+    .service.aperture.active
       include ../pugparts/aperture.pug
       i(class="fas fa-video")
       | Web
-    .service.aperture(onclick="openService(event, 'tab-tv')")
+    .service.aperture
       include ../pugparts/aperture.pug
       i(class="fas fa-film")
       | TV
-    .service.aperture(onclick="openService(event, 'tab-products')")
+    .service.aperture
       include ../pugparts/aperture.pug
       i(class="fas fa-suitcase")
       | Products
-  .tabcontent.wrapper(id="tab-web")
-    .wrapper
-      .
-        #[span Professional Web Videos]
-        Every brand has a story. At Brand Applause, we help you develop the interactive tools to share yours with the world.
-    .media-wrapper
-      iframe(src="https://www.youtube-nocookie.com/embed/rGCZudpfUEQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
-  .tabcontent.wrapper(id="tab-tv")
-    .media-wrapper
-    .wrapper
-      .
-        #[span Professional Advertisements, Documentaries, and Infomercials]
-        Sometimes you need more than a few seconds to tell your story. When your goal is to introduce customers to a new idea or experience, the best venue is often long-format. The campaigns below are a sample of the organizations that used long-format drama - documentaries, infomercials and feature films - to demonstrate their expertise and generate brand appeal. 
-  .tabcontent.wrapper(id="tab-products")
-    .wrapper
-      .
-        #[span Professional Product Shots]
-        Further your brand beautiful desktop photography and television commericals.
-    .media-wrapper
-      img(src="//res.cloudinary.com/matthew-thomas/image/upload/w_auto,q_auto,fl_lossy,f_auto,c_scale/v1561914692/rise-coffee" sizes="80vw")
+
+  //- tabs
+  .wrapper
+    .tab-content.active
+      .media-wrapper
+        iframe(src="https://www.youtube-nocookie.com/embed/rGCZudpfUEQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen)
+      .description
+        h Professional Web Videos
+        .
+          #[span Every brand has a story.]
+          At Brand Applause, we help you develop the interactive tools to share yours with the world.
+
+    .tab-content
+      .media-wrapper
+        img(src="//res.cloudinary.com/matthew-thomas/image/upload/w_auto,q_auto,fl_lossy,f_auto,c_scale/v1561914692/rise-coffee" sizes="80vw")
+      .description
+        h Professional Advertisements, Documentaries, and Infomercials
+        .
+          #[span Sometimes you need more than a few seconds to tell your story.]
+         When your goal is to introduce customers to a new idea or experience, the best venue is often long-format. The campaigns below are a sample of the organizations that used long-format drama - documentaries, infomercials and feature films - to demonstrate their expertise and generate brand appeal. 
+
+    .tab-content
+      .media-wrapper
+        img(src="//res.cloudinary.com/matthew-thomas/image/upload/w_auto,q_auto,fl_lossy,f_auto,c_scale/v1561914692/rise-coffee" sizes="80vw")
+      .description
+        h Professional Product Shots
+        .
+          #[span Further your brand]
+           beautiful desktop photography and television commericals.
+  //-tabs
+
   .brands
     div 
       include ../assets/svg/brands/brands.pug
