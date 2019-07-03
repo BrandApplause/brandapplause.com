@@ -1,6 +1,7 @@
 .client-services
   background-color: $white
   
+// services selectors
 .services
   text-align: center
   margin: 40px auto
@@ -80,49 +81,67 @@
     --closure: translateY(85%) translateX(7%)
     --rotation: 8deg
 
-.tabcontent
+// tabs and tab content
+.tab-content
   display: none
-  width: 100%
   text-align: center
-  .wrapper
-    line-height: 1.25em
-    width: 425px
-    text-align: left
-    margin: 20px 0px 0 calc(100% - 1025px)
-    float: right
-    span
-      font-weight: 400
-  @media (max-width: 1180px)
-    .wrapper
-      margin: 20px auto
-      width: calc(100% - 660px)
-  @media (max-width: 1120px)
-    .wrapper
-      float: none
-      width: 500px
-  @media (max-width: 550px)
-    .wrapper
-      width: 100%
+  margin: 60px auto 50px
+  &:after
+    content: ''
+    display: table
+    clear: both
+  &.active
+    display: block
+.media-wrapper
+  float: left
+  display: inline-block
+  height: 0 
+  padding-bottom: 37.13%
+  position: relative
+  width: calc(66% - 40px)
+  margin: 0 20px 
+  iframe,img
+    width: 100%
+    position: absolute
+    top: 0 
+    left: 0
+  iframe
+    height: 100%
+@media (max-width: 900px)
   .media-wrapper
-    display: inline-block
-    height: 0 
+    width: calc(100% - 20px)
+    float: none
     padding-bottom: 56.25%
-    position: relative
-    width: calc(100% - 40px)
-    max-width: 600px
-    margin: 10px auto
-    iframe,img
-      width: 100%
-      position: absolute
-      top: 0 
-      left: 0
-    iframe
-      height: 100%
-      max-height: 337.5px
+    margin: 0 
+
+.description
+  text-align: left
+  width: calc(33% - 40px)
+  display: inline-block
+  margin: 0 20px
+  padding: 0 12px
+  h
+    margin: 30px 0 12px -12px
+    display: block
+    font:
+      size: 22px
+      weight: 600
+    color: $purple
+  span
+    font-weight: 400
+@media (max-width: 900px)
+  .description
+    width: calc(100% - 20px)
+    padding: 20px 40px
+    h
+      margin-bottom: 10px
+
+
 
 .brands
   background: $dullBlack
   box-shadow: inset $shadow
+  padding-bottom: 8.5px
   div
     display: table
     margin: auto
