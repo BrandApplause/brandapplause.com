@@ -102,12 +102,24 @@
   span
     font-weight: 400
 
-// the absolutly hideos mass that forms the responsive letter
+// the absolutly hideous mass that forms the responsive letter
 .mail
   display: inline-block
   position: relative
   width: 100%
   max-width: 600px
+  &.sending
+    .flap
+      transform: rotateX(180deg)
+      z-index: 5
+      border-radius: 4px
+      transition: transform .3s .15s ease-in-out, z-index 0s .3s
+      &::after
+        background-color: $white
+        transition: background-color 0s .3s
+    .paper
+      transform: scaleY(0)
+      transition: transform .4s ease-out
 
 .flap
   position: absolute
@@ -119,9 +131,8 @@
   overflow: hidden
   z-index: -1
   transform-origin: bottom center
-  &:hover
-    transform: rotate(180deg)
-    z-index: 2
+  pointer-events: none
+  transition: transform .1s
   &::before //the top/back triangle
     content: ''
     +diamond(15deg, 1.2)
@@ -163,17 +174,18 @@
 
 // the part of the letter with the content
 .paper
+  transform-origin: bottom
   display: inline-block
   text-align: left
   background-color: $white
   box-shadow: $shadow
   padding: 40px
-  margin: 20px
+  margin-top: 20px
   border-radius: $radius
   width: calc(100% - 40px) !important
   max-width: 500px
   z-index: 0
-  transition: transform .15s ease-out
+  transition: transform .3s ease-out
   &:hover
     transform: translateY(-20px)
   input
@@ -187,6 +199,8 @@
     display: block
     width: 100%
     height: 240px
+
+
 @media (max-width: $small)
   .paper
     padding: 20px
@@ -242,9 +256,9 @@
       &::after
         background-color: $highlight
     &::after
+      pointer-events: none
       background-color: $postalBlue
       z-index: -1
-    
 
 
 //a rotated -45 deg diamond(square) has all 90deg angles, 
