@@ -108,7 +108,7 @@
   position: relative
   width: 100%
   max-width: 600px
-  &.sending
+  &.sending, &.sent
     .flap
       transform: rotateX(180deg)
       z-index: 5
@@ -120,6 +120,21 @@
     .paper
       transform: scaleY(0)
       transition: transform .4s ease-out
+  &.sent
+    animation: send 1s .45s
+    .first-button
+      opacity: 0
+
+@keyframes send 
+  0%
+  70%
+    transform: translateX(200%)
+    opacity: 0
+  71%
+    transform: translateY(50%)
+    opacity: 0
+  100%
+    transform: none
 
 .flap
   position: absolute
@@ -250,6 +265,9 @@
     padding: 5px 30px 3px
     z-index: 5
     pointer-events: all
+    transition: opacity .1s ease-in
+    //kinda hacky to keep button size consistant with changing content
+    width: 137px
     &:hover
       color: $offWhite
       border-color: $offWhite
@@ -259,7 +277,15 @@
       pointer-events: none
       background-color: $postalBlue
       z-index: -1
-
+    &.error
+      color: red
+      border-color: red
+      &:hover
+        color: $offWhite
+        border-color: $offWhite
+        box-shadow: 0 0 0 2px red
+        &::after
+          background-color: red
 
 //a rotated -45 deg diamond(square) has all 90deg angles, 
 //for every x% you skew it:
