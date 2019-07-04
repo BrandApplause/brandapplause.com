@@ -24,9 +24,9 @@
     .backing
     .paper
       .label Name
-      input(type="text" name="name")
+      input(type="text" name="name" required)
       .label E-mail
-      input(type="email" name="_replyto")
+      input(type="email" name="_replyto" required pattern=".+@.+?\..+")
       input(type="hidden" name="_gotcha")
       textarea(name="message")
     .backing.two

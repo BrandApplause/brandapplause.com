@@ -124,6 +124,21 @@
     animation: send 1s .45s
     .first-button
       opacity: 0
+  &.required
+    input:invalid
+      box-shadow: inset 0 0 3px red
+      border-color: #ff9999
+      position: relative
+    .first-button
+      color: rgba(red, 0.4)
+      border-color: rgba(red, 0.4)
+      cursor: not-allowed
+      &:hover
+        color: $offWhite
+        border-color: $offWhite
+        box-shadow: 0 0 0 2px rgba(red, 0.4)
+        &::after
+          background-color: rgba(red, 0.4)
 
 @keyframes send 
   0%
@@ -208,7 +223,12 @@
     display: block
     width: 100%
     margin: 10px 0
+    border-radius: 3px
+    border: 1px solid rgb(169, 169, 169)
+    padding: 4px
+    transition: border .3s, box-shadow .3s
   textarea
+    border-radius: 3px
     margin-top: 40px
     margin-bottom: 40%
     display: block
@@ -265,7 +285,8 @@
     padding: 5px 30px 3px
     z-index: 5
     pointer-events: all
-    transition: opacity .1s ease-in
+    cursor: pointer
+    transition: color .2s ease-in, border-color .2s ease-in, box-shadow .2s ease-in, opacity .1s ease-in
     //kinda hacky to keep button size consistant with changing content
     width: 137px
     &:hover
