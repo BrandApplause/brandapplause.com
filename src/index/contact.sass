@@ -246,9 +246,9 @@
   border-radius: 8px
   border: 2px solid $offWhite
   box-shadow: 0 0 0 2px rgb(254, 45, 45)
-  transform: translateX(10px) translateY(3px)
+  transform: translateX(10px) translateY(4px)
   transition: opacity .3s
-  animation: bounceReq .5s cubic-bezier(0.15, 0.43, 1, 1) infinite alternate
+  pointer-events: none
   &::after
     content: ''
     height: 0px
@@ -269,12 +269,6 @@
     padding: 20px
     margin: 10px
     width: calc(100% - 20px) !important
-
-@keyframes bounceReq
-  0%
-    transform: translateX(10px) translateY(3px)
-  100%
-    transform: translateX(10px) translateY(7px)
 
 .label
   font:
