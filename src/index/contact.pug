@@ -19,14 +19,16 @@
         #[span James Thomas is the ]
         owner of BrandApplause and has directed, produced, and shot more than 400 films and commercial campaigns.
 
-  form(action="https://usebasin!!!.com/f/476f85219509!!!" method="POST").mail#email
+  form(action="https://usebasin.com/f/476f85219509" method="POST").mail#email
     .flap
     .backing
     .paper
       .label Name
-      input(type="text" name="name")
+      input(type="text" name="name" required)
+      .require-message Please Enter Name
       .label E-mail
-      input(type="email" name="_replyto")
+      input(type="email" name="_replyto" required pattern=".+@.+?\..+")
+      .require-message Please Enter a Valid Email
       input(type="hidden" name="_gotcha")
       textarea(name="message")
     .backing.two
