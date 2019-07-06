@@ -113,6 +113,9 @@
     float: none
     padding-bottom: 56.25%
     margin: 0 
+@media (max-width: $small)
+  .media-wrapper
+    width: 100%
 
 .description
   text-align: left
@@ -131,11 +134,13 @@
     font-weight: 400
 @media (max-width: 900px)
   .description
-    width: calc(100% - 20px)
-    padding: 20px 40px
+    width: calc(100% - 40px)
+    margin: 0 auto
+    padding: 0
+    padding-left: 12px
     h
       margin-bottom: 10px
-
+      margin-left: -12px
 
 
 .brands

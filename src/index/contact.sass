@@ -108,7 +108,7 @@
   position: relative
   width: 100%
   max-width: 600px
-  &.sending
+  &.sending, &.sent
     .flap
       transform: rotateX(180deg)
       z-index: 5
@@ -118,8 +118,38 @@
         background-color: $white
         transition: background-color 0s .3s
     .paper
-      transform: scaleY(0)
+      transform: scaleY(.1) translateY(0px)
       transition: transform .4s ease-out
+  &.sent
+    animation: send 1s .45s
+    .first-button
+      opacity: 0
+  &.required
+    input:invalid
+      box-shadow: inset 0 0 3px red
+      border-color: #ff9999
+      position: relative
+    .first-button
+      color: rgba(red, 0.4)
+      border-color: rgba(red, 0.4)
+      cursor: not-allowed
+      &:hover
+        color: $offWhite
+        border-color: $offWhite
+        box-shadow: 0 0 0 2px rgba(red, 0.4)
+        &::after
+          background-color: rgba(red, 0.4)
+
+@keyframes send 
+  0%
+  70%
+    transform: translateX(200%)
+    opacity: 0
+  71%
+    transform: translateY(50%)
+    opacity: 0
+  100%
+    transform: none
 
 .flap
   position: absolute
@@ -156,8 +186,7 @@
   width: 100%
   bottom: 0
   z-index: -2
-  background: url('./assets/small/stripe.png')
-  background-position: bottom left -15px
+  background: repeating-linear-gradient(315deg, #326789 0px, #326789 15px, #fff 15px, #fff 25px, #e1534a 25px, #e1534a 40px, #fff 40px, #fff 50px)
   border-radius: 3px
   border-bottom-left-radius: $envelopeBorderRadius
   border-bottom-right-radius: $envelopeBorderRadius
@@ -193,14 +222,47 @@
     display: block
     width: 100%
     margin: 10px 0
+    border-radius: 3px
+    border: 1px solid rgb(169, 169, 169)
+    padding: 4px
+    transition: border .3s, box-shadow .3s
   textarea
+    border-radius: 3px
     margin-top: 40px
     margin-bottom: 40%
     display: block
     width: 100%
     height: 240px
-
-
+.require-message
+  opacity: 0 
+  position: absolute
+  z-index: 5
+  padding: 4px 11px
+  font-size: 17px
+  text-transform: uppercase
+  color: $offWhite
+  background-color: rgb(254, 45, 45)
+  border-radius: 8px
+  border: 2px solid $offWhite
+  box-shadow: 0 0 0 2px rgb(254, 45, 45)
+  transform: translateX(10px) translateY(4px)
+  transition: opacity .3s
+  pointer-events: none
+  &::after
+    content: ''
+    height: 0px
+    width: 0px
+    position: absolute
+    top: -8px
+    left: 24px
+    border-top: 8px solid rgb(254, 45, 45)
+    border-left: 8px solid rgb(254, 45, 45)
+    border-bottom: 8px solid transparent
+    border-right: 8px solid transparent
+    transform: rotate(45deg)
+    box-shadow: -1px -1px 0 1px $offWhite, -2px -2px 0 2px rgb(254, 45, 45)
+  &.required
+    opacity: 1
 @media (max-width: $small)
   .paper
     padding: 20px
@@ -250,6 +312,10 @@
     padding: 5px 30px 3px
     z-index: 5
     pointer-events: all
+    cursor: pointer
+    transition: color .2s ease-in, border-color .2s ease-in, box-shadow .2s ease-in, opacity .1s ease-in
+    //kinda hacky to keep button size consistant with changing content
+    width: 137px
     &:hover
       color: $offWhite
       border-color: $offWhite
@@ -259,7 +325,15 @@
       pointer-events: none
       background-color: $postalBlue
       z-index: -1
-
+    &.error
+      color: red
+      border-color: red
+      &:hover
+        color: $offWhite
+        border-color: $offWhite
+        box-shadow: 0 0 0 2px red
+        &::after
+          background-color: red
 
 //a rotated -45 deg diamond(square) has all 90deg angles, 
 //for every x% you skew it:
