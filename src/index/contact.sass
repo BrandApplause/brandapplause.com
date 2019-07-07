@@ -13,7 +13,7 @@
 
 // card with picture, contact info, and bio
 .address
-  width: 425px
+  width: 430px
   margin: 20px 0px 0 calc(100% - 1025px)
   float: right
   border-radius: $radius
@@ -35,7 +35,7 @@
   border-top-left-radius: $radius
   border-top-right-radius: $radius
   text-align: left
-  padding: 20px
+  padding: 19px
   font:
     size: 20px
     weight: 500
@@ -48,7 +48,7 @@
     &:hover
       color: rgba( 255, 248, 116, 0.97)
     &:first-of-type
-      margin-top: 2px
+      margin-top: 3px
       color: rgba( $white, 0.9)
   i
     padding-right: 8px
@@ -57,8 +57,8 @@
     box-shadow: 0 0 0 3px #665fbe;
     float: right
     border-radius: $radius
-    margin: -8px
-    margin-top: -8px
+    margin: -7px
+    margin-top: -7px
 @media (min-width: 1121px) and (max-width: 1181px)
   .head
     font-size: 19px
@@ -107,16 +107,16 @@
   display: inline-block
   position: relative
   width: 100%
-  max-width: 600px
+  max-width: 595px
   &.sending, &.sent
     .flap
       transform: rotateX(180deg)
       z-index: 5
       border-radius: 4px
-      transition: transform .3s .15s ease-in-out, z-index 0s .3s
+      transition: transform .3s .15s ease-in-out, z-index 0s .2s
       &::after
         background-color: $white
-        transition: background-color 0s .3s
+        transition: background-color 0.01s .29s
     .paper
       transform: scaleY(.1) translateY(0px)
       transition: transform .4s ease-out
@@ -178,6 +178,7 @@
     left: calc(50% - #{$envelopeHeight / 2})
     background-color: #d8e8e9
     border-top-right-radius: 20px
+    transition: background-color 0.01s .03s
 
 .backing
   position: absolute
@@ -260,7 +261,7 @@
     border-bottom: 8px solid transparent
     border-right: 8px solid transparent
     transform: rotate(45deg)
-    box-shadow: -1px -1px 0 1px $offWhite, -2px -2px 0 2px rgb(254, 45, 45)
+    box-shadow: -1.41px -1.41px 0 1px $offWhite, -2.41px -2.41px 0 1.8px rgb(254, 45, 45)
   &.required
     opacity: 1
 @media (max-width: $small)
