@@ -4,7 +4,7 @@
 // services selectors
 .services
   text-align: center
-  margin: 40px auto
+  margin: 15px auto
   max-width: 1200px
   position: relative
   &::before
@@ -14,7 +14,7 @@
     height: 10px
     border-radius: 7px
     position: absolute
-    top: 46px
+    top: 41px
     left: 20%
     box-shadow: $shadow
     
@@ -23,8 +23,8 @@
   display: inline-block
   --closure: translateY(66%) translateX(13.2%)
   --rotation: 10deg
-  height: 100px
-  width: 100px
+  height: 90px
+  width: 90px
   border-radius: 50%
   background-color: $white
   box-shadow: 0 0 0 2px $offWhite,  0 0 0px 5px $purple
@@ -54,7 +54,7 @@
   i
     display: block
     margin:
-      top: 19px
+      top: 13px
       bottom: 4px
     font-size: 30px
   .edge-contain,.leaf
@@ -71,7 +71,7 @@
 
 @media (max-width: 500px)
   .service
-    margin: 0 15px
+    margin: 0 1.8%
 
 @keyframes shutter
   20%
@@ -85,7 +85,7 @@
 .tab-content
   display: none
   text-align: center
-  margin: 60px auto 50px
+  margin: 40px auto 50px
   &:after
     content: ''
     display: table
@@ -114,6 +114,8 @@
     padding-bottom: 56.25%
     margin: 0 
 @media (max-width: $small)
+  .tab-content
+    margin-top: 20px
   .media-wrapper
     width: 100%
 
@@ -147,21 +149,25 @@
   background: $dullBlack
   box-shadow: inset $shadow
   padding-bottom: 8.5px
-  div
-    display: table
-    margin: auto
-    position: relative
-    text-align: center
-    max-width: $maxWidth
-    @media (max-width: $medium)
-      padding: 0 $mediumPagePadding
-    @media (max-width: $small)
-      padding: 0 $smallPagePadding
-    svg
-      height: 5em
-      width: 5em
-      margin: 1em
-      fill: inherit
+  display: table
+  margin: auto
+  position: relative
+  text-align: center
+  max-width: $maxWidth
+  @media (max-width: $medium)
+    padding: 0 $mediumPagePadding
+  @media (max-width: $small)
+    padding: 0 $smallPagePadding
+  svg
+    height: 5em
+    width: 5em
+    margin: 1em
+    fill: $offWhite
+    stroke: $offWhite
+    transition: fill 0.2s, stroke 0.2s
+    &:hover
+      fill: $yellow
+      stroke: $yellow
   
 @media (max-width: 1200px)
   .videos
