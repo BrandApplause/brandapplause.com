@@ -24,7 +24,7 @@
 
 $leafs: 6
 @while $leafs > 0
-  .aperture:hover 
+  .aperture:hover,.aperture.active
     .leaf:nth-of-type(#{2 * $leafs}),.edge-contain:nth-of-type(#{2 * $leafs - 1})
       // for every 10% you ADD to translateY REMOVE 3% from translateX, at 25%,25% aperture is shut, at 75% 10% aperture is fully open
       //for ie 11- or any browser that doesn't support custom properties
