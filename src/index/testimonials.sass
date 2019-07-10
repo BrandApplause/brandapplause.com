@@ -30,7 +30,6 @@
 
 .quote
   padding: 15px
-  padding-bottom: 10px + (($imgSize - ($imgSize / (99/70))) / 2 + $imgBorder)
   text-align: left
   letter-spacing: 0.015em
   line-height: 1.16em
@@ -45,6 +44,7 @@
   border-bottom-left-radius: $radius - 1
   border-bottom-right-radius: $imgSize / 2
   color: $offWhite
+  padding: 9px 10px 7px
   padding-right: ($imgSize + $imgBorder) / 2
   *
     display: inline-block
@@ -57,9 +57,11 @@
     margin: -(($imgSize - ($imgSize / (99/70))) / 2 + $imgBorder)
     margin-left: 10px
 
-@media (max-width: 600px)
+@media (max-width: 450px)
   .author
-    padding-right: ($imgSize + $imgBorder) / 2
+    padding-right: 10px
+    img
+      vertical-align: bottom
 
 .not-img
   text-align: right
@@ -76,7 +78,4 @@
   opacity: 0.9
   font-weight: 400
   margin-top: 4px
-
-.company
-  margin-bottom: 5px
 
