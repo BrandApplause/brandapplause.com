@@ -149,15 +149,16 @@
   background: $dullBlack
   box-shadow: inset $shadow
   padding-bottom: 8.5px
-  display: table
-  margin: auto
-  position: relative
-  text-align: center
-  max-width: $maxWidth
-  @media (max-width: $medium)
-    padding: 0 $mediumPagePadding
-  @media (max-width: $small)
-    padding: 0 $smallPagePadding
+  .div
+    display: table
+    margin: auto
+    position: relative
+    text-align: center
+    max-width: $maxWidth
+    @media (max-width: $medium)
+      padding: 0 $mediumPagePadding
+    @media (max-width: $small)
+      padding: 0 $smallPagePadding
   svg
     height: 5em
     width: 5em
