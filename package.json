@@ -40,7 +40,8 @@
       "webpack-dev-server": "^3.7.2"
    },
    "dependencies": {
-      "sanitize.css": "^10.0.0"
+      "sanitize.css": "^10.0.0",
+	  "vanilla-lazyload": "^12.0.0"
    },
    "optionalDependencies": {
       "svgo": "^1.2.2"
