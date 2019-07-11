@@ -20,10 +20,20 @@ $links.forEach(function(link) {
   });
   //make link smoothscroll (why is this event listener 'mouseup' and the previous 'click'? because I prefer mouseup for interactable elements so the user can mouse off the element if they change their mind, and click is I think needed because thats what triggers the links behavior)
   link.addEventListener('mouseup', function() {
-    var target = document.getElementById(link.getAttribute('href').slice(1));
+    var target = document.getElementById(link.getAttribute('href').slice(1)),
+      targetPosition = 0;
+    // test if there is no target element, ie the logo, and makes it go to the top of the page
+    if (target === null) {
+      targetPosition = 0
+    // then test if the window is thinner than 700px, so you know if the nav bar would overlap what you were scrolling to, if it would, scroll to slightly above the element
+    } else if (window.innerWidth <= 700) {
+      targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    } else {
+      targetPosition = target.getBoundingClientRect().top - 54 + window.scrollY;
+    }
     window.scrollTo({
       left: 0 + window.scrollX,
-      top: target.getBoundingClientRect().top - 54 + window.scrollY, //-54px for the nav bar
+      top: targetPosition,
       behavior: 'smooth'
     });
   })
