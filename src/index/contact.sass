@@ -36,7 +36,7 @@
   border-top-right-radius: $radius
   text-align: left
   padding: 19px
-  font: sans-serif
+  font:
     size: 20px
     weight: 500
   line-height: 1.5em
@@ -271,7 +271,7 @@
     width: calc(100% - 20px) !important
 
 .label
-  font: sans-serif
+  font:
     size: 19px
     weight: 400
   letter-spacing: .04em
@@ -303,14 +303,15 @@
     position: absolute
     bottom: 5%
     left: calc(50% - 72px)
-    font: sans-serif
+    font:
       size: 20px
       weight: 400
+    white-space: nowrap
     color: $postalBlue
     border-color: $postalBlue
     text-transform: uppercase
     letter-spacing: 0.04em
-    padding: 5px 30px 3px
+    padding: 5px 0 3px
     z-index: 5
     pointer-events: all
     cursor: pointer
