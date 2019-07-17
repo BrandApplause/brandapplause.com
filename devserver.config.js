@@ -28,7 +28,12 @@ module.exports = {
       {
         test: /\.pug$/,
         use: [
-          'file-loader?name=index.html',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].html',
+			}
+          },
           'extract-loader',
           'html-loader?interpolate=true',
           'pug-html-loader'
