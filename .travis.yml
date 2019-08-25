@@ -5,7 +5,7 @@ cache:
   directories:
   - node_modules
 script:
-  - npm run buildprod
+  - npm run buildprod; echo "brandapplause.com" > dist/CNAME
 deploy:
   provider: pages
   skip_cleanup: true
