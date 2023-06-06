@@ -9,8 +9,7 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css?family=Bangers|Poppins:200|Fira+Sans:300,400" rel="stylesheet")
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"></noscript>
         //
-        style ${require("sanitize.css")}
-        style ${require("./style.sass")}
+        link(href=require('./style.sass') rel='stylesheet')
     body
         include ./index/navbar.pug
         include ./index/splash.pug
@@ -18,4 +17,4 @@ html(lang="en")
         include ./index/client-services.pug
         include ./index/contact.pug
         include ./index/footer.pug
-        script(src='main.js')
+        script(src=require('./index.js'))
