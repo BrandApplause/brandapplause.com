@@ -10,7 +10,7 @@
 
 .footer-list
   margin: 0
-  padding: 0 
+  padding: 0
   text-transform: uppercase
   font-size: 19px
   min-width: 190px
@@ -58,7 +58,7 @@ $iconSize: 50px
   vertical-align: top
   font-size: 22px
   margin: 0 15px
-  margin-top: -($iconSize - 26px) / 2 // don't know why it needs to ne 26 not 22px but it keeps its aligned with the other sections
+  margin-top: -($iconSize - 26px) * 0.5 // don't know why it needs to ne 26 not 22px but it keeps its aligned with the other sections
   z-index: 0
   i
     z-index: 3
@@ -74,13 +74,13 @@ $iconSize: 50px
     box-shadow: 0 0 0 2px rgba($white , 0.7)
     transition: box-shadow 0.3s ease-in-out, background-color 0.4s ease-in, color .3s
 
-.linkedin 
+.linkedin
   .leaf
     background-color: #0077B5
   &:hover
     background-color: #0077B5
 
-.github 
+.github
   .leaf
     background-color: #6e5494
   &:hover
@@ -114,7 +114,7 @@ $iconSize: 50px
   .copyright
     margin: 0
 
-@media (max-width: 476px) // not $small because the style breaks at that point 
+@media (max-width: 476px) // not $small because the style breaks at that point
   .social-media
     text-align: center
     margin: 20px auto

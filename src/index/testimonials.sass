@@ -1,6 +1,5 @@
 .testimonials
   text-align: center
-  
 
 .t-container
   vertical-align: top
@@ -11,13 +10,13 @@
   margin: 20px 20px 40px
   box-shadow: $shadow
   border-radius: $radius
-  border-bottom-right-radius: $imgSize / 2
+  border-bottom-right-radius: $imgSize * 0.5
   background-color: $white
   &:first-child
     margin-top: 20px
   &:last-child
     margin-bottom: 40px
-  
+
 @media (max-width: 976px)
   .t-container
     min-width: unset
@@ -26,7 +25,6 @@
 @media (max-width: $small)
   .t-container
     width: 100%
-
 
 .quote
   padding: 15px
@@ -42,10 +40,10 @@
 .author
   background-color: $accentColor
   border-bottom-left-radius: $radius - 1
-  border-bottom-right-radius: $imgSize / 2
+  border-bottom-right-radius: $imgSize * 0.5
   color: $offWhite
   padding: 9px 10px 7px
-  padding-right: ($imgSize + $imgBorder) / 2
+  padding-right: ($imgSize + $imgBorder) * 0.5
   *
     display: inline-block
   > *
@@ -54,7 +52,7 @@
     border: $imgBorder solid $offWhite
     box-shadow: 0 0 0 3px $accentColor
     border-radius: 50%
-    margin: -(($imgSize - ($imgSize / (99/70))) / 2 + $imgBorder)
+    margin: -(($imgSize - math.div($imgSize, math.div(99, 70))) * 0.5 + $imgBorder)
     margin-left: 10px
 
 @media (max-width: 450px)
@@ -65,17 +63,16 @@
 
 .not-img
   text-align: right
-  width: calc(100% - #{($imgSize / (99/70) + (($imgSize - ($imgSize / (99/70))) / 2) + 10px + $imgBorder * 2)})
+  width: calc(100% - #{(math.div($imgSize, math.div(99, 70)) + (($imgSize - math.div($imgSize, math.div(99, 70))) * 0.5) + 10px + $imgBorder * 2)})
   position: relative
 
 .name,.position,.company
   width: 100%
   opacity: 0.7
   line-height: 0.88em
-  margin: 2px 
+  margin: 2px
 
 .name
   opacity: 0.9
   font-weight: 400
   margin-top: 4px
-

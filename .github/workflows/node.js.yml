@@ -22,7 +22,6 @@ jobs:
       run: npm install
     - name: Build site
       run: npm run buildprod
-    - run: echo "brandapplause.com" > dist/CNAME
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
