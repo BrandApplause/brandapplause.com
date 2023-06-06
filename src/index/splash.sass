@@ -27,7 +27,7 @@
   opacity: 0
   text-align: center
   text-shadow: black 0 0 35px
-  animation: slideIn .1s ease-in .5s 1 normal forwards 
+  animation: slideIn .1s ease-in .5s 1 normal forwards
   font:
     size: 44px
     family: 'Poppins', Arial, Helvetica, sans-serif
@@ -54,33 +54,33 @@
     top: 0
     overflow-x: hidden
     transform: rotate(-30deg) translateX(#{-$scrollHeight * .3})
-    transform-origin: left #{($scrollHeight * $beatRatio) + $scrollHeight / 2}
+    transform-origin: left #{($scrollHeight * $beatRatio) + $scrollHeight * 0.5}
     &:nth-child(odd) // split divs into left and right
       left: 0
-      transform-origin: right #{($scrollHeight * $beatRatio) + $scrollHeight / 2}
+      transform-origin: right #{($scrollHeight * $beatRatio) + $scrollHeight * 0.5}
       transform: rotate(30deg) scaleX(-1) translateX(100%) translateX(-3px)
     &::after //actual visable part
       background-color: $offWhite
       content: ''
       position: absolute
-      width: 38px 
+      width: 38px
       height: $scrollHeight
       top: ($scrollHeight * $beatRatio)
       border-radius: 5px
       transform: translateX(-5px)
   &:nth-child(2)
-    opacity: 0 
+    opacity: 0
     animation: bounceSplash 1.6s cubic-bezier(0.2, 0.58, 0.39, 0.98) 2s infinite running
 
 @keyframes slideIn
   0%
-    transform: translateY(10%) 
+    transform: translateY(10%)
     opacity: 0
   100%
     transform: translateY(0%)
     opacity: 0.9
-  
-@keyframes bounce 
+
+@keyframes bounce
   0%
     transform: translateY(0%)
   100%

@@ -29,7 +29,7 @@
 @media (max-width: 550px)
   .address
     width: 100%
-  
+
 .head
   background-color: $accentColor
   border-top-left-radius: $radius
@@ -90,7 +90,6 @@
     margin-top: -54px
     border-radius: 100%
 
-
 .bio
   border-bottom-left-radius: $radius
   border-bottom-right-radius: $radius
@@ -140,7 +139,7 @@
         &::after
           background-color: rgba(red, 0.4)
 
-@keyframes send 
+@keyframes send
   0%
   70%
     transform: translateX(200%)
@@ -167,7 +166,7 @@
     content: ''
     +diamond(15deg, 1.2)
     top: 56.5%
-    left: calc(50% - #{$envelopeHeight / 2})
+    left: calc(50% - #{$envelopeHeight * 0.5})
     background: $white
     border-top-right-radius: 20px
     box-shadow: $shadow
@@ -175,7 +174,7 @@
     content: ''
     +diamond(15deg, 1.2)
     top: calc(56.5% + 15px)
-    left: calc(50% - #{$envelopeHeight / 2})
+    left: calc(50% - #{$envelopeHeight * 0.5})
     background-color: #d8e8e9
     border-top-right-radius: 20px
     transition: background-color 0.01s .03s
@@ -235,7 +234,7 @@
     width: 100%
     height: 240px
 .require-message
-  opacity: 0 
+  opacity: 0
   position: absolute
   z-index: 5
   padding: 4px 11px
@@ -350,18 +349,17 @@
 
 .right-fold,.left-fold
   +diamond(19deg, 2.1)
-  top: $envelopeHeight / 2 - 13
+  top: $envelopeHeight * 0.5 - 13
   border-top-right-radius: 10px
 
 .right-fold
-  right: - $envelopeHeight / 2 + 3
+  right: - $envelopeHeight * 0.5 + 3
 
 .left-fold
-  left: - $envelopeHeight / 2 + 3
+  left: - $envelopeHeight * 0.5 + 3
 
 .middle-fold
   +diamond(17deg, 1.167)
   top: 50%
-  left: calc(50% - #{$envelopeHeight / 2})
+  left: calc(50% - #{$envelopeHeight * 0.5})
   border-top-right-radius: 20px
-
