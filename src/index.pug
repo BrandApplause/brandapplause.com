@@ -7,9 +7,10 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         //- temporary cdns 
         link(href="https://fonts.googleapis.com/css?family=Bangers|Poppins:200|Fira+Sans:300,400" rel="stylesheet")
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"></noscript>
+        link(href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet")
         //
-        link(href=require('./style.sass') rel='stylesheet')
+        style=require('sanitize.css?inline')
+        style=require('./style.sass?inline')
     body
         include ./index/navbar.pug
         include ./index/splash.pug
@@ -17,4 +18,4 @@ html(lang="en")
         include ./index/client-services.pug
         include ./index/contact.pug
         include ./index/footer.pug
-        script(src=require('./index.js'))
+        script=require('./index.js?inline')

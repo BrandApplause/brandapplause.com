@@ -24,6 +24,7 @@
   "dependencies": {
     "css-loader": "^6.8.1",
     "pug-plugin": "^4.9.7",
+    "sanitize.css": "^13.0.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
     "webpack": "^5.85.1",
