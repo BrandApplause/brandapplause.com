@@ -3,7 +3,7 @@ html(lang="en")
     head
         title Brand Applause
         meta(charset="utf-8")
-        style ${require("./styles/404.sass")}
+        style=require('./styles/404.sass?inline')
     body
         .err-wrapper
             .err-num 404
@@ -14,4 +14,3 @@ html(lang="en")
             setTimeout(function() {
                 window.location = '/';
             }, 5000)
-
